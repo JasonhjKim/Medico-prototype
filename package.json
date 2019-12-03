@@ -11,6 +11,9 @@
     "react-svg": "^10.0.25",
     "styled-components": "^4.4.1"
   },
+  "engines": {
+    "node": "13.1.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
