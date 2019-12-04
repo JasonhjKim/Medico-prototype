@@ -12,6 +12,7 @@ export default class Main extends Component {
         selected: "patients"
     }
     render() {
+        const { logout } = this.props;
         return(
             <React.Fragment>
                 <Navbar />
@@ -20,6 +21,7 @@ export default class Main extends Component {
                     <Wrapper>
                     <Sidebar>
                         <SidebarItem selected={ this.state.selected === "patients" ? true : false } to="/">Patients</SidebarItem>
+                        <LogoutButton onClick={ () => logout() }>Logout</LogoutButton>
                     </Sidebar>
                             <Content>
                                 <Route component={({ match }) => 
@@ -94,6 +96,10 @@ const Sidebar = styled.div`
     height: 100%;
     background-color: #4C817A;
     box-shadow: 5px 0 5px -5px #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     
     `
 
@@ -126,4 +132,23 @@ const PatientContainer = styled.div`
     background-color: white;
     margin-bottom: 1em;
     box-shadow: 0 0 10px 0 rgba(215,215,215,0.50);
+`
+
+
+
+const LogoutButton = styled.button`
+    width: 160px;
+    height: 45px;
+    color: white;
+    background-color: #6ECFC2;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    /* margin-right: 50px; */
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
 `
